@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HelloController {
-	@GetMapping("/")
+	@GetMapping("/vue")
 	public String index() {
 		return "index.html";
 	}
