@@ -11,13 +11,20 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 public class TestController {
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	
 	@GetMapping("/")
 	public String home() {
 		return "Data 준비중...";
 	}
 	
+	@CrossOrigin(origins = "http://localhost:8788")
+	@GetMapping("/api")
+	public String api() {
+		return "Api Data 준비중...";
+	}
 	
+	
+	@CrossOrigin(origins = "http://localhost:8788")
 	@GetMapping("/connectTest")
 	public String Test() {
 		return "스프링 뷰트 & 뷰 테스트...";
