@@ -25,7 +25,7 @@ public class TestController {
 	@CrossOrigin(origins = "http://localhost:8788")
 	@GetMapping("/api")
 	public String api() {
-		return "Api Data 준비중...";
+		return "Api Data 준비중....";
 	}
 	
 	
