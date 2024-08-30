@@ -24,16 +24,21 @@ public class UserController {
 		return "User registered successfully";
 	}
 	
-	 @PostMapping("/login")
-	 public String login(@RequestBody UserVO user, HttpSession session) {
-	        UserVO dbUser = userService.getUserById(user.getUserId());
-	        if (dbUser != null && dbUser.getPassword().equals(user.getPassword())) {
-	        	session.setAttribute("user", dbUser);
-	            return "Login successful";
-	        } else {
-	            return "Invalid credentials";
-	        }
-	    }
+//	 @PostMapping("/login")
+//	 public String login(@RequestBody UserVO user, HttpSession session) {
+//	        UserVO dbUser = userService.getUserById(user.getUserId());
+//	        if (dbUser != null && dbUser.getPassword().equals(user.getPassword())) {
+//	        	session.setAttribute("user", dbUser);
+//	            return "Login successful";
+//	        } else {
+//	            return "Invalid credentials";
+//	        }
+//	    }
+	
+	@PostMapping("/login")
+    public String login(@RequestBody UserVO user, HttpSession session) {
+        return userService.login(user, session); // 로그인 처리 요청
+    }
 	 
 	 @PostMapping("/logout")
 	 public String logout(HttpSession session) {
