@@ -4,7 +4,12 @@ import lombok.Data;
 
 @Data
 public class ResultVO {
-	  private Boolean state;
-	  private Object result;
-	  private String message;
+	Object result;
+	boolean success;
+	
+	// 생성자
+	public ResultVO(boolean success, Object result) {
+		this.result = result;
+		this.success = false;
+	}
 }
