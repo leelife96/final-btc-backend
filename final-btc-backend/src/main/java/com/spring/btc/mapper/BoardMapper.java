@@ -9,4 +9,6 @@ import com.spring.btc.vo.BoardVO;
 @Mapper
 public interface BoardMapper {
 	public List<BoardVO> getBoardList();
+	
+	public int registBoard(BoardVO vo);
 }

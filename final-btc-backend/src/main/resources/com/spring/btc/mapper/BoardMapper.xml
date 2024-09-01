@@ -13,4 +13,9 @@
 		<result property="writer" column="writer"/>
 		<result property="regDate" column="regDate"/>
    	</resultMap>
+   	
+   	 
+   	<insert id="registBoard"> 
+   		INSERT INTO BOARD (title, content, writer, regDate) VALUES (#{title}, #{content}, #{writer}, #{regDate})
+   	</insert>
 </mapper>

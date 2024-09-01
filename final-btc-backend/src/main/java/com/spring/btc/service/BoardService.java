@@ -9,4 +9,6 @@ import com.spring.btc.vo.BoardVO;
 @Service
 public interface BoardService {
 	public List<BoardVO> getBoardList();
+	
+	public boolean registBoard(BoardVO vo);
 }

@@ -1,6 +1,7 @@
 package com.spring.btc.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -29,6 +30,27 @@ public class BoardServiceImpl implements BoardService {
 			e.printStackTrace();
 		}
 		return boardList;
+	}
+
+	@Override
+	public boolean registBoard(BoardVO vo) {
+		// TODO Auto-generated method stub
+		vo.setRegDate(new Date());
+		vo.setWriter("user");
+		boolean result = false;
+		try(SqlSession session = sqlSessionFactory.openSession()) {
+			BoardMapper mapper = session.getMapper(BoardMapper.class);
+			int mapperResult = 0;
+			mapperResult = mapper.registBoard(vo);
+			if(mapperResult > 0) {
+				result = true;
+			}else {
+				result = false;
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 }

@@ -12,4 +12,6 @@ public class ResultVO {
 		this.result = result;
 		this.success = false;
 	}
+
+
 }
