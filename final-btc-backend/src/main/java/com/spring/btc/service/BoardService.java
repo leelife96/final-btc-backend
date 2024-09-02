@@ -11,4 +11,9 @@ public interface BoardService {
 	public List<BoardVO> getBoardList();
 	
 	public boolean registBoard(BoardVO vo);
+
+	public BoardVO getBoardDetail(BoardVO vo);
+	
+	public boolean editBoard(BoardVO vo);
+	
 }

@@ -53,4 +53,51 @@ public class BoardServiceImpl implements BoardService {
 		return result;
 	}
 
-}
+
+	@Override
+	public BoardVO getBoardDetail(BoardVO vo) {
+		// TODO Auto-generated method stub
+				BoardVO board = new BoardVO();
+		 
+				try (SqlSession session = sqlSessionFactory.openSession()) {
+					BoardMapper mapper = session.getMapper(BoardMapper.class);
+		 
+					board = mapper.getBoardDetail(vo.getBno());
+		 
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+				return board;
+			}
+
+	@Override
+	public boolean editBoard(BoardVO vo) {
+		// TODO Auto-generated method stub
+		vo.setRegDate(new Date());
+		vo.setWriter("user");
+		boolean result = false;
+		try (SqlSession session = sqlSessionFactory.openSession()) {
+			BoardMapper mapper = session.getMapper(BoardMapper.class);
+ 
+			int mapperResult = 0;
+			mapperResult = mapper.editBoard(vo);
+			if(mapperResult>0) {
+				result = true;
+			} else {
+				result = false;
+			}
+ 
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+
+	}
+
+
+
+

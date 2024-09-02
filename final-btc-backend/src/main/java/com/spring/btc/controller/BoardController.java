@@ -45,7 +45,7 @@ public class BoardController {
     }
     
     @ResponseBody
-    @RequestMapping(value = "get-board-list.do", method = RequestMethod.POST)
+    @RequestMapping(value = "regist-board.do", method = RequestMethod.POST)
     public ResultVO registBoard(@RequestBody BoardVO vo)
     {	
     	// 호출 시 찍히게 될 로그
@@ -57,6 +57,40 @@ public class BoardController {
         	result.setSuccess(true);
         }catch (Exception e) {
         	logger.error("[Board] getBoardList : " + e.getMessage(), e);
+        }
+    	return result;
+    }
+    
+    @ResponseBody
+    @RequestMapping(value = "get-board-detail.do", method = RequestMethod.POST)
+    public ResultVO getBoardDetail(@RequestBody BoardVO vo)
+    {	
+    	// 호출 시 찍히게 될 로그
+        logger.info("[POST] getBoardList");
+        // 결과 값을 담을 ResultVO를 선언한 생성자를 통해서 만드는데 기본값은 success는 false, result는 null로 세팅
+        ResultVO result = new ResultVO(false, null);
+        try {
+        	result.setResult(boardservice.getBoardDetail(vo));
+        	result.setSuccess(true);
+        }catch (Exception e) {
+        	logger.error("[Board] getBoardList : " + e.getMessage(), e);
+        }
+    	return result;
+    }
+    
+    @ResponseBody
+    @RequestMapping(value = "edit-board.do", method = RequestMethod.POST)
+    public ResultVO editBoard(@RequestBody BoardVO vo)
+    {	
+    	// 호출 시 찍히게 될 로그
+        logger.info("[POST] editBoard");
+        // 결과 값을 담을 ResultVO를 선언한 생성자를 통해서 만드는데 기본값은 success는 false, result는 null로 세팅
+        ResultVO result = new ResultVO(false, null);
+        try {
+        	result.setResult(boardservice.editBoard(vo));
+        	result.setSuccess(true);
+        }catch (Exception e) {
+        	logger.error("[Board] editBoard : " + e.getMessage(), e);
         }
     	return result;
     }
