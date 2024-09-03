@@ -16,4 +16,6 @@ public interface BoardService {
 	
 	public boolean editBoard(BoardVO vo);
 	
+	public boolean deleteBoard(BoardVO vo);
+	
 }

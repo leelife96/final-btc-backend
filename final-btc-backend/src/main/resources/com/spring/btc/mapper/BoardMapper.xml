@@ -29,4 +29,9 @@
 			WHERE BNO = ${bno}
 	</update>
 	
+	 <delete id="deleteBoard">
+        DELETE FROM BOARD 
+        WHERE BNO = #{bno}
+    </delete>
+	
 </mapper>
