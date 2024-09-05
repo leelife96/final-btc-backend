@@ -29,12 +29,12 @@ public class TestController {
 	}
 	
 	
-	@CrossOrigin(origins = "http://localhost:8788")
-	@GetMapping("/connectTest")
-	public String Test() {
-		return "스프링 뷰트 & 뷰 테스트...";
-	}
-	
+//	@CrossOrigin(origins = "http://localhost:8788")
+//	@GetMapping("/connectTest")
+//	public String Test() {
+//		return "스프링 뷰트 & 뷰 테스트...";
+//	}
+//	
 
 	
 }

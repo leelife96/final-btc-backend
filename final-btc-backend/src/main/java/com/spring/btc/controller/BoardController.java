@@ -13,6 +13,8 @@ import com.spring.btc.service.BoardService;
 import com.spring.btc.vo.BoardVO;
 import com.spring.btc.vo.ResultVO;
 
+import jakarta.servlet.http.HttpSession;
+
 @RestController
 @RequestMapping("/api/board")
 public class BoardController {	
@@ -22,6 +24,9 @@ public class BoardController {
 	
     @Autowired
     private BoardService boardservice;
+    
+    @Autowired
+    private HttpSession session; // 세션 객체 주입
 	
     @ResponseBody
     @RequestMapping(value = "get-board-list.do", method = RequestMethod.GET)
