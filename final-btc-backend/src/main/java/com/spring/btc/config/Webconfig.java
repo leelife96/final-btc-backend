@@ -15,4 +15,14 @@ public class Webconfig implements WebMvcConfigurer {
                 .allowedHeaders("*")
                 .allowCredentials(true);
 	}
+	
+//	@Override
+//	public void addCorsMappings(CorsRegistry registry) {
+//	    registry.addMapping("/**")
+//	            .allowedOrigins("*") // 프론트엔드 서버 URL로 변경
+//	            .allowedMethods("GET", "POST", "PUT", "DELETE")
+//	            .allowedHeaders("*")
+//	            .allowCredentials(true);
+//	}
+
 }

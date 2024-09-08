@@ -3,35 +3,34 @@
 <mapper namespace="com.spring.btc.mapper.BoardMapper">
 
     <select id="getBoardList" resultMap="boardMap">
-		SELECT * FROM BOARD
-	</select>
+        SELECT * FROM board
+    </select>
 
-   	<resultMap type="com.spring.btc.vo.BoardVO" id="boardMap">
-   		<id property="bno" column="bno"></id>
-   		<result property="title" column="title"/>
-		<result property="content" column="content"/>
-		<result property="writer" column="writer"/>
-		<result property="regDate" column="regDate"/>
-   	</resultMap>
-   	
-   	 
-   	<insert id="registBoard"> 
-   		INSERT INTO BOARD (title, content, writer, regDate) VALUES (#{title}, #{content}, #{writer}, #{regDate})
-   	</insert>
-   	
-   	<select id="getBoardDetail" resultMap="boardMap">
-		SELECT * FROM BOARD WHERE bno = #{bno}
-	</select>
-	
-	<update id="editBoard">
-		UPDATE BOARD 
-			SET title = #{title}, content = #{content}, writer = #{writer}, regDate = #{regDate} 
-			WHERE BNO = ${bno}
-	</update>
-	
-	 <delete id="deleteBoard">
-        DELETE FROM BOARD 
-        WHERE BNO = #{bno}
+    <resultMap type="com.spring.btc.vo.BoardVO" id="boardMap">
+        <id property="bno" column="bno"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="writer" column="writer"/>
+        <result property="regDate" column="regdate"/>
+    </resultMap>
+    
+    <insert id="registBoard"> 
+        INSERT INTO board (title, content, writer, regdate) VALUES (#{title}, #{content}, #{writer}, #{regDate})
+    </insert>
+    
+    <select id="getBoardDetail" resultMap="boardMap">
+        SELECT * FROM board WHERE bno = #{bno}
+    </select>
+    
+    <update id="editBoard">
+        UPDATE board 
+        SET title = #{title}, content = #{content}, writer = #{writer}, regdate = #{regDate} 
+        WHERE bno = #{bno}
+    </update>
+    
+    <delete id="deleteBoard">
+        DELETE FROM board 
+        WHERE bno = #{bno}
     </delete>
-	
+    
 </mapper>
