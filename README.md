@@ -36,6 +36,7 @@
 - Ubuntu
 - MobaXterm
 - AWS(Amazon Web Services)
+- Git
 
 ### 기술 스택
 
